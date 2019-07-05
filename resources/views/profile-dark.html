@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Fox - Profile</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+</head>
+
+<body class="body--dark">
+	<!-- Start header -->
+	<header class="header">
+		<div class="header__left">
+			<a href="#" class="header__logo">
+				<img src="img/logo-dark.png" alt="logo">
+			</a>
+			<a class="menu-open">
+				<i class="ic-burger"></i>
+			</a>
+			<a class="menu-close">
+				<i class="ic-close"></i>
+			</a>
+		</div>
+		<div class="header__center">
+			<nav class="nav">
+				<ul class="nav__list">
+					<li class="nav__item">
+						<a href="jackpot-dark.html" class="nav__link"><i class="ic-nav1"></i>JACKPOT</a>
+					</li>
+					<li class="nav__item">
+						<a href="coin-flip-dark.html" class="nav__link"><i class="ic-nav2"></i>COINFLIP</a>
+					</li>
+					<li class="nav__item">
+						<a href="index-dark.html" class="nav__link"><i class="ic-nav3"></i>KING OF THE HILL</a>
+					</li>
+					<li class="nav__item">
+						<a href="help-dark.html" class="nav__link"><i class="ic-nav4"></i>HELP</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="social-menu__wrap--adaptive">
+				<a class="social-menu__open">
+					<span></span>
+				</a>
+				<a class="social-menu__close">
+					<i class="ic-close"></i>
+				</a>
+				<ul class="social-menu">
+					<li class="social-menu__item">
+						<a href="#" class="social-menu__link" title="telegram">
+							<i class="ic-telegram"></i>
+						</a>
+					</li>
+					<li class="social-menu__item" title="vk">
+						<a href="#" class="social-menu__link">
+							<i class="ic-vk"></i>
+						</a>
+					</li>
+					<li class="social-menu__item" title="vk-chat">
+						<a href="#" class="social-menu__link">
+							<i class="ic-vk-blue"></i>
+						</a>
+					</li>
+					<li class="social-menu__item">
+						<a href="profile.html" class="social-menu__link">
+							<i class="ic-sun"></i>
+						</a>
+					</li>
+					<li class="social-menu__item">
+						<a class="social-menu__link">
+							<i class="ic-user"></i>
+							<span>123</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="social-menu__wrap">
+				<ul class="social-menu">
+					<li class="social-menu__item">
+						<a href="#" class="social-menu__link" title="telegram">
+							<i class="ic-telegram"></i>
+						</a>
+					</li>
+					<li class="social-menu__item" title="vk">
+						<a href="#" class="social-menu__link">
+							<i class="ic-vk"></i>
+						</a>
+					</li>
+					<li class="social-menu__item" title="vk-chat">
+						<a href="#" class="social-menu__link">
+							<i class="ic-vk-blue"></i>
+						</a>
+					</li>
+					<li class="social-menu__item">
+						<a href="profile.html" class="social-menu__link">
+							<i class="ic-sun"></i>
+						</a>
+					</li>
+					<li class="social-menu__item">
+						<a class="social-menu__link">
+							<i class="ic-user"></i>
+							<span>123</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="header__right user">
+			<div class="user__ava">
+				<img src="img/exp-avatar.png" alt="avatar">
+			</div>
+			<div class="user__info">
+				<span class="user__level">7 LVL.</span>
+				<span class="user__exp">412 EXP.</span>
+			</div>
+			<div class="user__left">
+				<a class="user__open">
+					<i class="ic-burger"></i>
+				</a>
+				<a class="user__close">
+					<i class="ic-close"></i>
+				</a>
+			</div>
+			<div class="user__dropdown dropdown">
+				<div class="dropdown__top">
+					<p class="dropdown__level">7 LEVEL.</p>
+					<p class="dropdown__exp">412 / <span>1000 EXP.</span></p>
+					<div class="dropdown__timeline"></div>
+				</div>
+				<ul class="dropdown__menu">
+					<li><a href="profile-dark.html">Профиль</a></li>
+					<li><a href="#history" id="showHistory">История игр</a></li>
+					<li><a href="daily-bonus-dark.html">Ежедневный бонус</a></li>
+					<li><a data-izimodal-open="#outputModal" data-izimodal-transitionin="fadeInDown">Вывести средства <i class="ic-coin"></i></a></li>
+					<li><a href="profile-dark.html">Промокоды</a></li>
+					<li><a href="#">Выйти</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="user--mobile">
+			<div class="user__top">
+				<div class="user__ava">
+					<img src="img/exp-avatar.png" alt="avatar">
+				</div>
+				<div class="user__info">
+					<span class="user__level">7 LVL.</span>
+					<span class="user__exp">412 EXP.</span>
+				</div>
+				<div class="user__left">
+					<a class="user__arrow"></a>
+				</div>
+			</div>
+			<div class="dropdown--mobile">
+				<div class="dropdown__top">
+					<p class="dropdown__level">7 LEVEL.</p>
+					<p class="dropdown__exp">412 / <span>1000 EXP.</span></p>
+					<div class="dropdown__timeline"></div>
+				</div>
+				<ul class="dropdown__menu">
+					<li><a href="profile-dark.html">Профиль</a></li>
+					<li><a href="#history" id="showHistoryMobile">История игр</a></li>
+					<li><a href="daily-bonus-dark.html">Ежедневный бонус</a></li>
+					<li><a data-izimodal-open="#outputModal" data-izimodal-transitionin="fadeInDown">Вывести средства <i class="ic-coin"></i></a></li>
+					<li><a href="profile-dark.html">Промокоды</a></li>
+					<li><a href="#">Выйти</a></li>
+				</ul>
+			</div>
+	</header>
+	<!-- End header -->
+
+	<!-- Start section -->
+	<main class="main">
+		<div class="main__left">
+						
+			<!-- Profile block -->
+			<div class="profile">
+				<div class="profile__avatar">
+					<img src="img/winner.png" alt="avatar">
+				</div>
+				<p class="profile__name">temkin</p>
+			</div>
+
+			<!-- Balance block -->
+			<div class="balance">
+				<p class="balance__title">Баланс:</p>
+				<p class="balance__value">7, 528<span>COINS</span></p>
+				<div class="balance__action">
+					<a class="button button--gradient balance__input" data-izimodal-open="#inputModal" data-izimodal-transitionin="fadeInDown">ПОПОЛНИТЬ</a>
+					<a class="button button--dark balance__output" data-izimodal-open="#outputModal" data-izimodal-transitionin="fadeInDown">ВЫВЕСТИ</a>
+				</div>
+			</div>
+
+			<!-- Help block -->
+			<div class="help">
+				<p class="help__title">Помощь</p>
+				<a class="help__link" data-izimodal-open="#helpModal" data-izimodal-transitionin="fadeInDown">
+					<i class="ic-rules"></i>
+					Правила игры
+				</a>
+			</div>
+
+			<!-- Notification block -->
+			<div class="notification">
+				<p class="notification__title">Звуковые уведомления</p>
+				<form class="notification__form">
+					<label class="notification__radio">
+						<input type="radio" name="sound" checked>
+						<span class="notification__check"></span>
+						<span class="notification__name">Включить</span>
+					</label>
+					<label class="notification__radio">
+						<input type="radio" name="sound">
+						<span class="notification__check"></span>
+						<span class="notification__name">Выключить</span>
+					</label>
+				</form>
+			</div>
+			
+			<!--Copyright block -->
+			<div class="copyright">
+				<p class="copyright__text">Копирование элементов дизайна с сайта без согласия запрещено! <br>
+						&copy;FOX-X.RU 2018</p>
+			</div>
+
+			<!-- Application block -->
+			<div class="application">
+				<p class="application__title">Мобильное приложение</p>
+				<a href="http://play.google.com/store/apps/details?id=​package_name" class="application__link">
+					<img src="img/google-play.png" alt="google-play">
+				</a>
+			</div>
+
+		</div>
+		<div class="main__center main__center--king">
+
+			<!-- Profile block -->
+			<div class="profile mobile-show">
+				<div class="profile__avatar">
+					<img src="img/winner.png" alt="avatar">
+				</div>
+				<p class="profile__name">temkin</p>
+			</div>
+
+			<div class="referral">
+				<h4 class="referral__title">РЕФЕРАЛЬНАЯ СИСТЕМА</h4>
+				<div class="referral__wrap">
+					<div class="referral__left">
+
+						<div class="ref-level">
+							<div class="ref-level__top">
+								<p class="ref-level__level">7 LEVEL.</p>
+								<p class="ref-level__exp">412 / <span>1000 EXP.</span></p>
+							</div>
+							<div class="ref-level__timeline">
+								<span></span>
+							</div>
+							<p class="ref-level__text">1 уровень = 100 руб.</p>
+						</div>
+
+						<div class="ref-value">
+							<p class="ref-value__text">Кол-во ваших <br>
+									рефералов:</p>
+							<a class="ref-value__link" data-izimodal-open="#referralTable" data-izimodal-transitionin="fadeInDown">15</a>
+						</div>
+
+					</div>
+					<div class="referral__right ref-link">
+						<form class="ref-link__promo">
+							<input type="text" name="promo" class="ref-link__promo-field" placeholder="Введите промокод">
+							<a id="promoActive" class="button ref-link__promo-button">Активировать</a>
+						</form>
+						<p class="ref-link__title">Получайте бонусы с рефералов!</p>
+						<div class="ref-link__wrap">
+							<p class="ref-link__percent">7%</p>
+							<p class="ref-link__text">С каждого приведенного 
+									игрока на наш сервис</p>
+						</div>
+						<a id="showNotify" class="ref-link__link">http://fox-x.ru/danicxi/ref?423jd</a>
+						<input type="text" id="showNotifyInput" class="ref-link__link--hidden" value="hsttp://fox-x.ru/danicxi/ref?423jd">
+						<p class="ref-link__stock">Делитесь ссылкой с друзьями и получайте реферальные начисления!</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="history" class="history">
+				<div class="history__top">
+					<ul class="history__links">
+						<li class="history__link history__link--active">ИСТОРИЯ БАЛАНСА</li>
+						<li class="history__link">/ ИСТОРИЯ ИГР</li>
+					</ul>
+					<a class="history__help" data-izimodal-open="#outputRules" data-izimodal-transitionin="fadeInDown"><i class="ic-rules"></i>Правила вывода</a>
+				</div>
+				<div id="historyBodyOne" class="history__body history__body--active nano">
+					<div class="nano-content">
+						<ul class="history__list">
+							<li class="history__item hist-balance hist-balance--green">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-green"></i>1, 095 Руб.</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__source">Qiwi Wallet</p>
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--red">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-red"></i>1, 095 Руб.</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__source">Qiwi Wallet</p>
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--yellow">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-yellow"></i>1, 095 Руб.</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__source--user"><i class="ic-user-black"></i> Игрок <span>Жека</span> пополнил баланс</p>
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--green">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-green"></i>1, 095 Руб.</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__source">Qiwi Wallet</p>
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--red">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-red"></i>1, 095 Руб.</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__source">Qiwi Wallet</p>
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--yellow">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-yellow"></i>1, 095 Руб.</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__source--user"><i class="ic-user-black"></i> Игрок <span>Жека</span> пополнил баланс</p>
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="historyBodyTwo" class="history__body nano">
+					<div class="nano-content">
+						<ul class="history__list">
+							<li class="history__item hist-balance hist-balance--game hist-balance--green">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-green"></i>1, 095 coins</p>
+									<p class="hist-balance__game">JACKPOT</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--game hist-balance--red">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-red"></i>1, 095 coins</p>
+									<p class="hist-balance__game">Coinflip</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--game hist-balance--red">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-red"></i>1, 095 coins</p>
+									<p class="hist-balance__game">KING OF THE HILL</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--game hist-balance--green">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-green"></i>1, 095 coins</p>
+									<p class="hist-balance__game">JACKPOT</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--game hist-balance--red">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-red"></i>1, 095 coins</p>
+									<p class="hist-balance__game">KING OF THE HILL</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--game hist-balance--green">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-green"></i>1, 095 coins</p>
+									<p class="hist-balance__game">JACKPOT</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+							<li class="history__item hist-balance hist-balance--game hist-balance--red">
+								<div class="hist-balance__left">
+									<p class="hist-balance__sum"><i class="ic-money-red"></i>1, 095 coins</p>
+									<p class="hist-balance__game">KING OF THE HILL</p>
+								</div>
+								<div class="hist-balance__right">
+									<p class="hist-balance__data">21/02/18</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+
+			<!-- Balance block -->
+			<div class="balance mobile-show">
+				<p class="balance__title">Баланс:</p>
+				<p class="balance__value">7, 528<span>COINS</span></p>
+				<div class="balance__action">
+					<a class="button balance__input" data-izimodal-open="#inputModal" data-izimodal-transitionin="fadeInDown">ПОПОЛНИТЬ</a>
+					<a class="button button--dark balance__output" data-izimodal-open="#outputModal" data-izimodal-transitionin="fadeInDown">ВЫВЕСТИ</a>
+				</div>
+			</div>
+
+			<!-- Help block -->
+			<div class="help mobile-show">
+				<p class="help__title">Помощь</p>
+				<a class="help__link" data-izimodal-open="#helpModal" data-izimodal-transitionin="fadeInDown">
+					<i class="ic-rules"></i>
+					Правила игры
+				</a>
+			</div>
+
+			<!-- Application block -->
+			<div class="application mobile-show">
+				<p class="application__title">Мобильное приложение</p>
+				<a href="http://play.google.com/store/apps/details?id=​package_name" class="application__link">
+					<img src="img/google-play.png" alt="google-play">
+				</a>
+			</div>
+
+		</div>
+		<div class="main__right chat">
+			<div class="chat__top">
+				<p class="chat__title">ОНЛАЙН ЧАТ</p>
+				<a data-izimodal-open="#chatRules" data-izimodal-transitionin="fadeInDown" class="chat__rules">Правила чата</a>
+				<div class="chat__close"></div>
+			</div>
+			<div class="chat__body">
+				<div class="chat__body-wrap nano">
+					<div class="nano-content">
+						<div class="chat__message message">
+							<div class="message__top">
+								<div class="message__ava">
+									<img src="img/chat_avatar.png" alt="avatar">
+									<span class="message__value">12</span>
+								</div>
+								<p class="message__name message__name--icon"><i class="ic-youtube"></i> PalenoEleno</p>
+								<span class="message__time">19:31</span>
+							</div>
+							<div class="message__body">
+								<p class="message__text">Делайте ставки немного быстрей, не 
+										борзейте пожалуйста!
+								</p>
+							</div>
+						</div>
+						<div class="chat__message message">
+							<div class="message__top">
+								<div class="message__ava">
+									<img src="img/chat_avatar.png" alt="avatar">
+									<span class="message__value">12</span>
+								</div>
+								<p class="message__name message__name--icon"><i class="ic-youtube"></i> PalenoEleno</p>
+								<span class="message__time">19:31</span>
+							</div>
+							<div class="message__body">
+								<p class="message__text">Делайте ставки немного быстрей, не 
+										борзейте пожалуйста! <a href="help.html" class="message__link">Помощь игрокам</a>
+								</p>
+							</div>
+						</div>
+						<div class="chat__message message">
+							<div class="message__top">
+								<div class="message__ava">
+									<img src="img/chat_avatar.png" alt="avatar">
+									<span class="message__value">12</span>
+								</div>
+								<p class="message__name message__name--icon"><i class="ic-youtube"></i> PalenoEleno</p>
+								<span class="message__time">19:31</span>
+							</div>
+							<div class="message__body">
+								<p class="message__text">Делайте ставки немного быстрей, не 
+										борзейте пожалуйста!
+								</p>
+							</div>
+						</div>
+						<div class="chat__message message">
+							<div class="message__top">
+								<div class="message__ava">
+									<img src="img/chat_avatar.png" alt="avatar">
+									<span class="message__value">12</span>
+								</div>
+								<p class="message__name">PalenoEleno</p>
+								<span class="message__time">19:31</span>
+							</div>
+							<div class="message__body">
+								<p class="message__text">Делайте ставки немного быстрей, не 
+										борзейте пожалуйста!
+								</p>
+							</div>
+						</div>
+						<div class="chat__message message">
+							<div class="message__top">
+								<div class="message__ava">
+									<img src="img/chat_avatar.png" alt="avatar">
+									<span class="message__value">12</span>
+								</div>
+								<p class="message__name">PalenoEleno</p>
+								<span class="message__time">19:31</span>
+							</div>
+							<div class="message__body">
+								<p class="message__text">Делайте ставки немного быстрей, не 
+										борзейте пожалуйста!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="chat__bottom">
+				<div class="chat__bottom-wrap">
+					<div class="chat-form">
+						<input type="text" class="chat-form__inp" placeholder="Введите сообщение">
+						<button class="chat-form__btn"><i class="ic-chat"></i></button>
+					</div>
+				</div>
+				<div class="chat__bottom-wrap">
+					<p class="chat__bottom-text">Для общения в чате внесите депозит не менее 3000 coins</p>
+					<i class="ic-deposit-warning"></i>
+				</div>
+				<div class="chat__bottom-wrap">
+					<a class="button chat__bottom-button" data-izimodal-open="#inputModal" data-izimodal-transitionin="fadeInDown">ПОПОЛНИТЬ</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- End section -->
+
+
+	<div class="modal modal--conclusion" id="outputModal">
+		<div class="modal__top">
+			<h6 class="modal__title">Вывод средств</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<div class="conclusion__balance">
+				<p class="conclusion__balance-text">Текущий баланс:</p>
+				<p class="conclusion__balance-value">53,218 <span>coins</span></p>
+			</div>
+			<div class="output-box">
+				<div class="output-box__top">
+					<p class="output-box__text">Сумма</p>
+					<input type="text" class="output-box__field">
+					<p class="output-box__hint">
+						Максимальная сумма за раз: 15000р <br>
+						Минимальная сумма: 50р
+					</p>
+				</div>
+				<div class="output-box__bottom">
+					<p class="output-box__text">Реквизиты</p>
+					<p class="output-box__requisites">+799379992</p>
+				</div>
+			</div>
+
+			<div class="conclusion__where">
+				<p class="conclusion__where-title">КУДА ВЫВЕСТИ</p>
+				<ul class="conclusion__where-list">
+					<li>
+						<label class="output-radio">
+							<input type="radio" checked="checked" name="outputType" onclick="showField1();">
+							<span class="output-radio__box">
+								<i class="ic-qiwi"></i>
+							</span>
+						</label>
+					</li>
+					<li>
+						<label class="output-radio">
+							<input type="radio" name="outputType" onclick="showField2();">
+							<span class="output-radio__box">
+								<i class="ic-sber"></i>
+							</span>
+						</label>
+					</li>
+					<li>
+						<label class="output-radio">
+							<input type="radio" name="outputType" onclick="showField1();">
+							<span class="output-radio__box">
+								<i class="ic-beeline"></i>
+							</span>
+						</label>
+					</li>
+					<li>
+						<label class="output-radio">
+							<input type="radio" name="outputType" onclick="showField1();">
+							<span class="output-radio__box">
+								<i class="ic-mtc"></i>
+							</span>
+						</label>
+					</li>
+				</ul>
+				<div id="fieldRequisites" class="output-requisites">
+					<p class="output-requisites__text">Реквизиты:</p>
+					<input type="text" name="requisites" class="output-requisites__input" placeholder="Введите номер">
+				</div>
+			</div>
+			<div class="modal__buttons">
+				<a href="#" class="button button--border--white button--wide">Вывод средств</a>
+			</div>
+		</div>
+	</div> 
+
+	<div class="modal conclusion" id="inputModal">
+		<div class="modal__top">
+			<h6 class="modal__title">Пополнение баланса</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<div class="conclusion__balance">
+				<p class="conclusion__balance-text">Текущий баланс:</p>
+				<p class="conclusion__balance-value">53,218 <span>coins</span></p>
+			</div>
+			<div class="output-box">
+				<div class="output-box__top">
+					<p class="output-box__text output-box__text--two">Сумма пополнения</p>
+					<input type="text" class="output-box__field">
+					<p class="output-box__hint">
+						Максимальная сумма за раз: 15000р <br>
+						Минимальная сумма: 50р
+					</p>
+				</div>
+			</div>
+			<div class="conclusion__where">
+				<p class="conclusion__where-title">Способы оплаты</p>
+				<ul class="conclusion__where-list">
+					<li>
+						<label class="output-radio">
+							<input type="radio" checked="checked" name="inputType" onclick="show1();">
+							<span class="output-radio__box">
+								<i class="ic-qiwi"></i>
+							</span>
+						</label>
+					</li>
+					<li>
+						<label class="output-radio">
+							<input type="radio" name="inputType" onclick="show2();">
+							<span class="output-radio__box">
+								<i class="ic-sber"></i>
+							</span>
+						</label>
+					</li>
+					<li>
+						<label class="output-radio">
+							<input type="radio" name="inputType" onclick="show1();">
+							<span class="output-radio__box">
+								<i class="ic-beeline"></i>
+							</span>
+						</label>
+					</li>
+					<li>
+						<label class="output-radio">
+							<input type="radio" name="inputType" onclick="show1();">
+							<span class="output-radio__box">
+								<i class="ic-mtc"></i>
+							</span>
+						</label>
+					</li>
+				</ul>
+				<div id="outputRequisites" class="output-requisites">
+					<p class="output-requisites__text">Реквизиты:</p>
+					<input type="text" name="requisites" class="output-requisites__input" placeholder="Введите номер">
+				</div>
+			</div>
+			<div class="modal__buttons">
+				<a href="#" class="button">Пополнить</a>
+			</div>
+		</div>
+	</div> 
+
+	<div class="modal modal--help" id="helpModal">
+		<div class="modal__top">
+			<h6 class="modal__title">Правила игры CLASSIC</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<div class="modal-help nano">
+				<div class="nano-content">
+					<ol>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="modal modal--help" id="chatRules">
+		<div class="modal__top">
+			<h6 class="modal__title">Правила чата</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<div class="modal-chat nano">
+				<div class="nano-content">
+					<ol>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+						<li>Rules</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="modal modal--help" id="outputRules">
+		<div class="modal__top">
+			<h6 class="modal__title">Правила вывода</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi cum illo laborum corporis, sint itaque ullam temporibus nesciunt ex vel. Explicabo iste necessitatibus rem officiis enim quaerat perspiciatis provident qui?</p>
+		</div>
+	</div> 
+
+	<div class="modal modal--help" id="referralInfo">
+		<div class="modal__top">
+			<h6 class="modal__title">Таблица рефералов</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi cum illo laborum corporis, sint itaque ullam temporibus nesciunt ex vel. Explicabo iste necessitatibus rem officiis enim quaerat perspiciatis provident qui?</p>
+		</div>
+	</div>
+	
+	<div class="modal modal--help" id="referralTable">
+		<div class="modal__top">
+			<h6 class="modal__title">Список ваших рефералов</h6>
+			<a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
+		</div>
+		<div class="modal__body">
+			<ul class="ref-list">
+				<li class="ref-list__item">
+					<div class="ref-list__left">
+						<img src="img/history-game-avatar-1.png" alt="avatar" class="ref-list__avatar">
+						<p class="ref-list__name">Lolik</p>
+					</div>
+					<div class="ref-list__center">
+						<p class="ref-list__value">Реферальные начисления: 100 coins</p>
+					</div>
+					<div class="ref-list__right">
+						<p class="ref-list__level">7 LEVEL.</p>
+					</div>
+				</li>
+				<li class="ref-list__item">
+					<div class="ref-list__left">
+						<img src="img/history-game-avatar-1.png" alt="avatar" class="ref-list__avatar">
+						<p class="ref-list__name">Lolik</p>
+					</div>
+					<div class="ref-list__center">
+						<p class="ref-list__value">Реферальные начисления: 100 coins</p>
+					</div>
+					<div class="ref-list__right">
+						<p class="ref-list__level">7 LEVEL.</p>
+					</div>
+				</li>
+				<li class="ref-list__item">
+					<div class="ref-list__left">
+						<img src="img/history-game-avatar-1.png" alt="avatar" class="ref-list__avatar">
+						<p class="ref-list__name">Lolik</p>
+					</div>
+					<div class="ref-list__center">
+						<p class="ref-list__value">Реферальные начисления: 100 coins</p>
+					</div>
+					<div class="ref-list__right">
+						<p class="ref-list__level">7 LEVEL.</p>
+					</div>
+				</li>
+				<li class="ref-list__item">
+					<div class="ref-list__left">
+						<img src="img/history-game-avatar-1.png" alt="avatar" class="ref-list__avatar">
+						<p class="ref-list__name">Lolik</p>
+					</div>
+					<div class="ref-list__center">
+						<p class="ref-list__value">Реферальные начисления: 100 coins</p>
+					</div>
+					<div class="ref-list__right">
+						<p class="ref-list__level">7 LEVEL.</p>
+					</div>
+				</li>
+				<li class="ref-list__item">
+					<div class="ref-list__left">
+						<img src="img/history-game-avatar-1.png" alt="avatar" class="ref-list__avatar">
+						<p class="ref-list__name">Lolik</p>
+					</div>
+					<div class="ref-list__center">
+						<p class="ref-list__value">Реферальные начисления: 100 coins</p>
+					</div>
+					<div class="ref-list__right">
+						<p class="ref-list__level">7 LEVEL.</p>
+					</div>
+				</li>
+				<li class="ref-list__item">
+					<div class="ref-list__left">
+						<img src="img/history-game-avatar-1.png" alt="avatar" class="ref-list__avatar">
+						<p class="ref-list__name">Lolik</p>
+					</div>
+					<div class="ref-list__center">
+						<p class="ref-list__value">Реферальные начисления: 100 coins</p>
+					</div>
+					<div class="ref-list__right">
+						<p class="ref-list__level">7 LEVEL.</p>
+					</div>
+				</li>
+			</ul>
+			<ul class="paginations">
+				<li class="paginations__item">
+					<a href="#" class="paginations__link paginations__link--active">1</a>
+				</li>
+				<li class="paginations__item">
+					<a href="#" class="paginations__link">2</a>
+				</li>
+				<li class="paginations__item">
+					<a href="#" class="paginations__link">3</a>
+				</li>
+				<li class="paginations__item">
+					<a href="#" class="paginations__link">...</a>
+				</li>
+				<li class="paginations__item">
+					<a href="#" class="paginations__link">9</a>
+				</li>
+				<li class="paginations__item">
+					<a href="#" class="paginations__link">10</a>
+				</li>
+			</ul>
+		</div>
+	</div> 
+
+	<div class="modal modal--bet" id="betModal">
+	</div> 
+
+	<div class="modal modal--bet" id="betModalCoin">
+	</div>
+
+	<div class="modal modal--bet" id="betModalCoin2">
+	</div>
+
+	<div class="modal modal--bet" id="createGame">
+	</div> 
+
+	<div class="modal modal--bet" id="waitPlayer">
+	</div> 
+	
+	<div class="modal modal--bet" id="waitPlayer2">
+	</div> 
+
+	<div class="modal modal--bet modal--done" id="waitPlayer3">
+	</div> 
+
+	<div class="modal modal--bet modal--done" id="waitPlayer4">
+	</div>
+	
+	<div class="modal modal--bet modal--done" id="waitPlayer5">
+	</div> 
+
+	<div class="modal modal--bet modal--wait" id="waitPlayer6">
+	</div> 
+
+	<div class="modal modal--bet modal--done-two" id="waitPlayer7">
+	</div> 
+
+	<div class="modal modal--bet modal--done-two" id="waitPlayer8">
+	</div> 
+	
+
+	<!-- Include css and js -->
+	<link rel="stylesheet" href="css/main-dark.min.css">
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
