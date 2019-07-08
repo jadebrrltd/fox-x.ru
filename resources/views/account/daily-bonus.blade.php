@@ -1,8 +1,7 @@
 @extends('layout')
 @section('content')
 
-	<body @if(checkSessionTheme()) class="body--dark" @endif>
-	@include('blocks.header')
+	<body @if(checkSessionTheme()) class="body--dark" @endif>	
 	<!-- Start section -->
 	<main class="main">
 		<div class="main__left">
