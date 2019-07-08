@@ -17,7 +17,7 @@
 				</a>
 			</div>
 
-			@include('blocks.notification')
+			<!-- @include('blocks.notification') -->
 
 			@include('blocks.copyright')
 
