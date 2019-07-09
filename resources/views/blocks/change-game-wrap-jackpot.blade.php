@@ -68,7 +68,7 @@
         <div class="rooms mobile-show">
             <p class="rooms__title">Выбор комнаты:</p>
             <ul class="rooms__wrap">
-                 onclick="switchHomeLayout(1)">CLASSIC</li>
+                <li class="rooms__link @if($gameTypeId == 1) rooms__link--active @endif" data-game-id="1" onclick="switchHomeLayout(1)">CLASSIC</li>
                 <li class="rooms__link @if($gameTypeId == 2) rooms__link--active @endif" data-game-id="2" onclick="switchHomeLayout(2)">SMALL</li>
             </ul>
             <div id="roomClassic" class="rooms__box rooms__box--active">
