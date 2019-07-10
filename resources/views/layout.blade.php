@@ -17,11 +17,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="//fox-x.ru/"/>
+    <meta property="og:url" content="https://fox-x.ru/"/>
     <meta property="og:title" content="Официальный сайт Фокс икс!!!">
     <meta property="og:description" content="Испытай удачу !"/>
     <meta property="og:site_name" content="FOX-X"/>
-    <meta property="og:image" content="//fox-x.ru/img/fox_prewiev_vk.jpg"/>
+    <meta property="og:image" content="https://fox-x.ru/img/fox_prewiev_vk.jpg"/>
     <meta property="og:image:type" content="image/jpeg"/>
 
     <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.ico') }}" type="image/x-icon">
