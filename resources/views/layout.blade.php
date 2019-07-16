@@ -6,13 +6,12 @@
     <meta charset="utf-8">
 
     @if(isset($pageName))
-        <title>Fox - {{ $pageName }}</title>
+        <title>Fox - {{ $pageName }} официальный сайт фокс-х , фокс икс</title>
     @else
-        <title>fox-x - официальный сайт jackpot , coinflip, King of the Hill</title>
+        <title> официальный сайт фокс-х , фокс икс</title>
     @endif
-    <meta name="description"
-          content="fox-x  или фокс икс официальный сайт, онлайн рулетка на реальные деньги c бесплатными промокодами на каждые 24 часа. Вывод на любые платежные системы без комиссии.Лучший заработок в интернете 2019 год">
-
+    <meta name="description" content="Fox-x Заходи и играй в фокс икс. Мы являемся официальным сайтом FOX-X. Лучшая экономическая онлайн стратегия Фокс-х">
+    <meta name="keywords" content="maxmin, nvuti, nvuti com, nvuti регистрация, игра деньги, игра заработок, игры с выводом, игры с выводом денег, нвути, нвути сайт, онлайн игры с выводом, игры с деньгами, рубликс, драгон мани, rublix, dragon money, nvuti best, нвути бест, 1dice, disbet, xgan, SUPER-X.BET, PLAY2X, FOXGAME, STEPХ100, GOCS.PRO, EPICMONEY, FART-GAME">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
