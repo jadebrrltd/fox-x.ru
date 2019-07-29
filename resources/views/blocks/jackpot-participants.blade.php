@@ -28,7 +28,7 @@
    
         <div class="winners__slider-item winners__slider-item--" style="border-bottom:3px solid {{$participant->color}}">
             <img src="{{ asset($participant->account->image) }}" alt="avatar" class="winners__slider-avatar">
-            <span class="winners__slider-percent">{{ round($participant->cash * 100 / $bank, 2) }}%</span>
+            <span class="winners__slider-percent">{{ $bank ? round($participant->cash * 100 / $bank, 2) : 0 }}%</span>
         </div>
     @endforeach
 @else

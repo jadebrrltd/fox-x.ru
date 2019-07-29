@@ -36,8 +36,8 @@ class JackpotController extends Controller
 
     public function setParticipant(Request $request) {
 
-        if(($request->cash > 300 || $request->cash < 0) && $request->gameTypeId == 2) {
-            return ['error' => 1, 'message' => 'Максимальная ставка 300 COINS'];
+        if(($request->cash > 300 || (int) $request->cash <= 0) && $request->gameTypeId == 2) {
+            return ['error' => 1, 'message' => $request->cash > 300  ? 'Максимальная ставка 300 COINS' : 'Минимальная ставка 1 COIN'];
         }
 
         if($request->cash < 300 && $request->gameTypeId == 1) {

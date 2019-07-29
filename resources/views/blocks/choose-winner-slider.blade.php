@@ -26,7 +26,7 @@
     @foreach($gameTemp2->participants as $key => $participant)
 
                 <div class="choose-winner__slider-item choose-winner__slider-item--" data-count="{{ $participant->account->id }}">
-                    <img src="{{ asset($participant->account->image) }}" alt="avatar" data-percent="{{ round($participant->cash * 100 / $bank, 2) }}" class="choose-winner__slider-avatar--" style="border-bottom:3px solid {{$participant->color}}">
+                    <img src="{{ asset($participant->account->image) }}" alt="avatar" data-percent="{{ $bank ? round($participant->cash * 100 / $bank, 2) : 0 }}" class="choose-winner__slider-avatar--" style="border-bottom:3px solid {{$participant->color}}">
                 </div>
      
 

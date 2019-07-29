@@ -1211,7 +1211,7 @@ var MainFunction = {
 
                             //  $(element).find('.selectric').find('.label').addClass(selectOption);
                             var data = $(this).data('selectric');
-                            console.log(data);
+                            // console.log(data);
                             setTimeout(function () {
                                 $(data.element).closest('.' + data.classes.wrapper).find('.label').removeClass(function (index, className) {
                                     return string = (className.match(/(^|\s)bgn-text bgn-text--\S+/g) || []).join(' ');
@@ -1262,7 +1262,7 @@ var MainFunction = {
                                 var selectOption = currentElement.closest('tr').find('select[name="' + name + '"]').find('option:selected').attr("class");
 
                                 var data = currentElement.closest('tr').find('select[name="' + name + '"]').data('selectric');
-                                console.log(data);
+                                // console.log(data);
                                 $(data.element).closest('.' + data.classes.wrapper).find('.label').removeClass(function (index, className) {
                                     return string = (className.match(/(^|\s)bgn-text bgn-text--\S+/g) || []).join(' ');
                                 });
