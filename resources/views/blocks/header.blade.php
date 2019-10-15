@@ -33,7 +33,10 @@
                     <a href="{{ route('king-of-the-hill') }}" class="nav__link @if(Route::currentRouteName() == 'king-of-the-hill') nav__link--active @endif">
                         <i class="ic-nav3"></i>KING OF THE HILL</a>
                 </li>
-            
+                <li class="nav__item">
+                    <a href="{{ route('crash') }}" class="nav__link @if(Route::currentRouteName() == 'crash') nav__link--active @endif">
+                        <i class="ic-nav5"></i>CRASH</a>
+                </li>
             </ul>
         </nav>
     <div class="header__center">
@@ -48,6 +51,10 @@
                 <li class="nav__item">
                     <a href="{{ route('king-of-the-hill') }}" class="nav__link @if(Route::currentRouteName() == 'king-of-the-hill') nav__link--active @endif">
                         <i class="ic-nav3"></i>KING OF THE HILL</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ route('crash') }}" class="nav__link @if(Route::currentRouteName() == 'crash') nav__link--active @endif">
+                        <i class="ic-nav5"></i>CRASH</a>
                 </li>
                 <li class="nav__item">
                     <a href="{{ route('help') }}" class="nav__link @if(Route::currentRouteName() == 'help') nav__link--active @endif"><i class="ic-nav4"></i>HELP</a>

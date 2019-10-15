@@ -9,6 +9,7 @@
             transform: translate3d(0px, 0px, 0px) !important;
         }
     </style>
+    <div id="app"></div>
     <main class="main">
         <div class="main__left">
 

@@ -3031,3 +3031,46 @@ body {
         padding-top: 0
     }
 }
+
+li.nav__item i {
+    color: rgba(102, 102, 102, .5);
+    font-size: 25px;
+    -webkit-transition: .5s ease all;
+    transition: .5s ease all;
+}
+
+.nav__item:hover .fa {
+    color: #4c84ff;
+}
+
+.nav__link--active .fa {
+    color: #4c84ff;
+}
+button.btn.btn-stop-game {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    cursor: pointer;
+    color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}

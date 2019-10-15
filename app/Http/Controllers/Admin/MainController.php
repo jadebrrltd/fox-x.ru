@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
 
+use App\Events\StopCrash;
+
+use App\CrashGame;
+use DB;
+
 class MainController extends Controller
 {
 
@@ -308,6 +313,68 @@ class MainController extends Controller
             ->get(); // вывод игр по игре coinflip
 
         return view('admin.games', compact('page', 'jackpotGames', 'coinflipGames'));
+    }
+
+    // Страница отвечающая за вывод игр и информации по играм Crash
+    public function crash() {
+        $page = 'Crash';
+        $game = CrashGame::orderBy('id', 'desc')->first();
+
+        if($game->stop_game < time() OR $game->status == 1){
+            $info = 'Онлайн в Crash: 0';
+            $bets = null;
+            $mode = 0;
+        }else{
+            $info = $game;
+            $bets = DB::table('crashbets')->where('crash_game_id', $game->id)->orderBy('price', 'desc')->get();
+            $mode = 1;
+
+            $x = time() - $game->create_game;
+
+            $i = 0;
+            $index = 1.06;
+            $profit = $x;
+
+
+        }
+
+        return view('admin.crash', compact('page', 'info', 'bets', 'mode', 'profit'));
+    }
+
+    // Метод возвращающий информацию по текущим ставкам Crash
+    public function crash_bets(){
+        $game = CrashGame::orderBy('id', 'desc')->first();
+        $bets = DB::table('crashbets')->where('crash_game_id', $game->id)->orderBy('price', 'desc')->get();
+
+        if(count($bets) == 0){
+            $content = 'Ставок нет';
+        }else{
+            $content = '';
+        }
+        foreach ($bets as $bet) {
+            if($game->profit > $bet->number){
+                $z = '+';
+            }else{
+                $z = '-';
+            }
+            $bts = $bet->number * $bet->price - $bet->price;
+            $content .= '<tr>';
+            $content .=    '<th scope="row">'.$bet->number.'X</th>';
+            $content .=    '<td>'.$bet->price.'</td>';
+            $content .=    '<td>'.$z.$bts.'</td>';
+            $content .= '</tr>';
+        }
+
+        return $content;
+    }
+
+    // Метод останавливает график Crash
+    public function crash_stop(Request $request){
+        $game = CrashGame::orderBy('id', 'desc')->first();
+        $stop = time() + 17;
+        DB::table('crashgames')->where('id', $game->id)->update(['stop_game' => $stop, 'profit' => $request->get('r')]);
+
+        StopCrash::dispatch('true');
     }
 
     // Метод возвращающий информацию по определенному пользователю

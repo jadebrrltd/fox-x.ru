@@ -66,6 +66,12 @@
                     <span>Игры</span>
                 </a>
             </li>
+            <li class="nav__item">
+                <a href="{{ route('admin.crash') }}" class="nav__link @if(Route::currentRouteName() == 'admin.crash') nav__link--active @endif">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                    <span>Crash</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>

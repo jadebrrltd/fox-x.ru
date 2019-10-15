@@ -6,62 +6,35 @@
     <meta charset="utf-8">
 
     @if(isset($pageName))
-        <title>Fox - {{ $pageName }} официальный сайт фокс-х , фокс икс</title>
+        <title>Fox - {{ $pageName }}</title>
     @else
-        <title> официальный сайт фокс-х , фокс икс</title>
+        <title>fox-x - официальный сайт jackpot , coinflip, King of the Hill</title>
     @endif
-    <meta name="description" content="Fox-x Заходи и играй в фокс икс. Мы являемся официальным сайтом FOX-X. Лучшая экономическая онлайн стратегия Фокс-х">
-    <meta name="keywords" content="maxmin, nvuti, nvuti com, nvuti регистрация, игра деньги, игра заработок, игры с выводом, игры с выводом денег, нвути, нвути сайт, онлайн игры с выводом, игры с деньгами, рубликс, драгон мани, rublix, dragon money, nvuti best, нвути бест, 1dice, disbet, xgan, SUPER-X.BET, PLAY2X, FOXGAME, STEPХ100, GOCS.PRO, EPICMONEY, FART-GAME">
+    <meta name="description"
+          content="fox-x  или фокс икс официальный сайт, онлайн рулетка на реальные деньги c бесплатными промокодами на каждые 24 часа. Вывод на любые платежные системы без комиссии.Лучший заработок в интернете 2019 год">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://fox-x.ru/"/>
-    <meta property="og:title" content="Официальный сайт Фокс икс!!!">
+    <meta property="og:url" content="//fox-x.ru/"/>
+    <meta property="og:title" content="Официальный сайт Фокс икс">
     <meta property="og:description" content="Испытай удачу !"/>
     <meta property="og:site_name" content="FOX-X"/>
-    <meta property="og:image" content="https://fox-x.ru/img/fox_prewiev_vk.jpg"/>
+    <meta property="og:image" content="//fox-x.ru/img/fox_prewiev_vk.jpg"/>
     <meta property="og:image:type" content="image/jpeg"/>
 
     <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     @if(checkSessionTheme())
         <link class="main-css" rel="stylesheet" href="{{ asset('css/main-dark.min.css') }}">
     @else
         <link class="main-css" rel="stylesheet" href="{{ asset('css/main.min.css') }}">
     @endif
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function (d, w, c) {
-            (w[c] = w[c] || []).push(function() {
-                try {
-                    w.yaCounter53248024 = new Ya.Metrika({
-                        id:53248024,
-                        clickmap:true,
-                        trackLinks:true,
-                        accurateTrackBounce:true
-                    });
-                } catch(e) { }
-            });
-
-            var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function () { n.parentNode.insertBefore(s, n); };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else { f(); }
-        })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/53248024" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
 
 </head>
 <body @if(checkSessionTheme()) class="body--dark" @endif>

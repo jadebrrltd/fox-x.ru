@@ -1,5 +1,5 @@
 {
-	"authHost": "https://fox-x.ru/",
+	"authHost": "https://fox-x.ru",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
@@ -9,13 +9,13 @@
 			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
-	"devMode": true,
+	"devMode": false,
 	"host": null,
 	"port": "6001",
 	"protocol": "https",
 	"socketio": {},
-	"sslCertPath": "/etc/letsencrypt/live/fox-x.ru/fullchain.pem",
-	"sslKeyPath": "/etc/letsencrypt/live/fox-x.ru/privkey.pem",
+	"sslCertPath": "",
+	"sslKeyPath": "",
 	"sslCertChainPath": "",
 	"sslPassphrase": "",
 	"subscribers": {

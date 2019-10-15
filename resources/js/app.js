@@ -22,6 +22,10 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+Vue.component('users-online', require('./components/UserCrashComponent.vue').default);
+Vue.component('admin-crash', require('./components/CrashAdm.vue').default);
+Vue.component('stop-game', require('./components/StopBtn.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

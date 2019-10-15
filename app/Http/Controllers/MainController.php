@@ -350,4 +350,11 @@ class MainController extends Controller
         return view('king-of-the-hill', compact('games', 'gameClassic', 'gameSenyor', 'timer', 'pageName', 'lastGame'));
     }
 
+    public function crash(){
+
+        $pageName = 'Crash';
+
+        return view('crash', compact('pageName'));
+    }
+
 }

@@ -32,6 +32,25 @@ Route::post('auth-user', [
     'uses' => 'AuthController@authUser'
 ]);
 
+
+//Маршруты игры Crash
+Route::get('/crash', ['as' => 'crash', 'uses' => 'CrashController@index']);
+Route::get('/crash/new', ['as' => 'crash-new', 'uses' => 'CrashController@newGame']);
+Route::get('/crash/info', ['as' => 'crash-info', 'uses' => 'CrashController@info']);
+Route::get('/crash/last-game', ['as' => 'crash-last', 'uses' => 'CrashController@getLastGame']);
+
+Route::post('/crash/new-bet', function(Illuminate\Http\Request $request){
+    App\Events\JoinCrash::dispatch($request->input('body'), 1, 2);
+});
+
+Route::post('/crash/bet', ['as' => 'crash-bet', 'uses' => 'CrashController@newBet']);
+Route::get('/crash/update-balance', ['as' => 'crash-last', 'uses' => 'CrashController@updateBalace']);
+
+//Тестовые маршруты
+Route::get('/crash/test', function(){
+    App\Jobs\CreateCrash::dispatch("Test")->delay(now()->addMinutes(2))->onQueue('processing');
+});
+
 /*Route::get('/phpmyadmin', [
     'uses' => 'MainController@coinflip'
 ]);*/
@@ -211,6 +230,21 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::get('/games', [
         'as' => 'games',
         'uses' => 'MainController@games'
+    ]);
+
+    Route::get('/crash', [
+        'as' => 'crash',
+        'uses' => 'MainController@crash'
+    ]);
+
+    Route::get('/crash/bets', [
+        'as' => 'crash-bet',
+        'uses' => 'MainController@crash_bets'
+    ]);
+
+    Route::get('/crash/stop-game', [
+        'as' => 'crash-bet',
+        'uses' => 'MainController@crash_stop'
     ]);
 
     Route::post('/get-info-user', [
