@@ -13,7 +13,7 @@ npm-debug.log
 yarn-error.log
 /*.docx
 /*.sql
-/*.log
+*.log
 /*.pdf
 /winners
 /*.htaccess
