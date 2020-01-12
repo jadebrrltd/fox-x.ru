@@ -18,8 +18,11 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/favicon/apple-touch-icon-114x114.png') }}">
     <link rel="stylesheet" href="{{ asset('css/admin/main.min.css') }}">
-    
+
     <script src="https://use.fontawesome.com/edf72e88c6.js"></script>
+
+    <link rel="stylesheet" href="{{ asset('css/admin/admin.css') }}?v={{ time() }}">
+
 </head>
 
 <body>

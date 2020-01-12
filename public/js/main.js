@@ -1,9 +1,9 @@
 $('#crashGraphic').attr('width', $('#crash_block').width() - 60);
-        
+
 var graphStep = 0.1;
 var startX = 0;
 var canvas = $('#crashGraphic')[0];
-var context = canvas.getContext('2d'); 
+var context = canvas.getContext('2d');
 var canvasWidth;
 var canvasHeight;
 var scaleX = 80;
@@ -52,14 +52,14 @@ function startCrashTimer(curentX, i){
             context.lineWidth = 0.5;
 
             context.moveTo(border + 20 + 0.5, canvasHeight - border);
-            context.lineTo(border + 20 + 0.5, border); 
+            context.lineTo(border + 20 + 0.5, border);
             context.moveTo(border + 20 + 0.5, canvasHeight - border);
             context.lineTo(canvasWidth - border, canvasHeight - border);
 
             context.strokeStyle = '#aaa';
             context.stroke();
 
-            context.stroke();   
+            context.stroke();
             context.font = "40px Tahoma";
             context.textAlign = "center";
             context.fillStyle = "green";
@@ -77,7 +77,7 @@ function startCrashTimer(curentX, i){
 }
 
 // Инициализация графика canvas
-function paintCrashGraphic(curentX, randomNumber) { 
+function paintCrashGraphic(curentX, randomNumber) {
     canvasWidth = canvas.width;
     canvasHeight = canvas.height - 20;
     context.lineWidth = 2;
@@ -92,21 +92,21 @@ function paintCrashGraphic(curentX, randomNumber) {
     context.stroke();
     context.closePath();
 
-    context.strokeStyle = '#aaa';   
-    context.clearRect(0, 0, canvasWidth, canvasHeight); 
+    context.strokeStyle = '#aaa';
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
     context.beginPath();
     context.moveTo(border + 20 + 0.5, canvasHeight - border);
-    context.lineTo(border + 20 + 0.5, border); 
+    context.lineTo(border + 20 + 0.5, border);
     context.moveTo(border + 20 + 0.5, canvasHeight - border);
     context.lineTo(canvasWidth - border, canvasHeight - border);
-    
+
 
     context.closePath();
     drawX = startX;
     var isFirst = true;
     context.stroke();
-    context.beginPath();                
-    context.lineWidth = 0.5;                  
+    context.beginPath();
+    context.lineWidth = 0.5;
 
     //Нижняя разметка цифр
     var m = 0;
@@ -178,11 +178,11 @@ function initGraph(curentX, isFirst,randomNumber){
     var isFirst = true;
     var isFirstX = true;
 
-    context.beginPath();               
+    context.beginPath();
     context.lineWidth = 9.5;
     context.stroke();
 
-    context.strokeStyle = '#FFB838';     
+    context.strokeStyle = '#FFB838';
     while (drawX <= curentX) {
         drawY = getCrashGraphicY(drawX);
         drawX += graphStep;
@@ -194,7 +194,7 @@ function initGraph(curentX, isFirst,randomNumber){
         }
     }
 
-    context.stroke();   
+    context.stroke();
     context.font = "50px Tahoma";
     context.textAlign = "center";
     if(parseInt(curentX) < 12){
@@ -206,7 +206,19 @@ function initGraph(curentX, isFirst,randomNumber){
     }else{
         context.fillStyle = '#FFB838';
     }
-    context.fillText(drawY.toFixed(2) + 'x', canvas.width/2, canvas.height/2);
+    var coeff = drawY.toFixed(2);
+    // console.log(drawY, coeff);
+    // socketCG.broadcast.emit('crash-coef', coeff);
+    // var socketCG = io.connect(':6001');
+    // socketCG.broadcast.emit('crash-coef', 'test coef');
+    //
+    // $(document).trigger('crash-coeff', coeff);
+
+    // console.log(coeff);
+    $('body').data('coeff', coeff).attr('data-coeff', coeff);
+
+
+    context.fillText(coeff + 'x', canvas.width/2, canvas.height/2);
 
     var prof_max = $('#users_count_bet_win').text();
 
@@ -273,7 +285,7 @@ function init2Line(curentX){
     }
 
     context.strokeStyle = '#3E8EBA';
-    context.stroke(); 
+    context.stroke();
 
     init3Line(curentX);
 }
@@ -315,7 +327,7 @@ function init3Line(curentX){
     }
 
     context.strokeStyle = '#7DD358';
-    context.stroke(); 
+    context.stroke();
 
     init4Line(curentX);
 }
@@ -357,7 +369,7 @@ function init4Line(curentX){
     }
 
     context.strokeStyle = '#E95E3F';
-    context.stroke(); 
+    context.stroke();
 
     arcGraf(curentX);
 }
@@ -388,7 +400,7 @@ function arcGraf(curentX){
     drawXX = curentX;
     drawYY = getCrashGraphicY(drawXX);
 
-    context.arc(border + drawXX * scaleX + 10, canvasHeight - border - (drawYY - 1) * scaleY + 2, 8, 0, 2*Math.PI, false); 
+    context.arc(border + drawXX * scaleX + 10, canvasHeight - border - (drawYY - 1) * scaleY + 2, 8, 0, 2*Math.PI, false);
 
     if(parseInt(drawXX) < 12){
         context.strokeStyle = '#E95E3F';
@@ -409,7 +421,7 @@ function arcGraf(curentX){
        context.strokeStyle = '#FFB838';
         context.fillStyle = '#FFB838';
         context.fill();
-        context.stroke(); 
+        context.stroke();
     }
 }
 
@@ -417,6 +429,7 @@ function arcGraf(curentX){
 
 // Инициализация осей графика
 function initScale(curent){
+    // console.log('current', curent);
     clearCanvas();
     context.closePath();
 
@@ -447,11 +460,11 @@ function initScale(curent){
     var simb;
     var x_stage;
 
-    
+
     //Вертикальная разметка цифр
     var v = 0;
     var stepYv = 0;
-    
+
     var h = canvasHeight;
 
     var height = 10;
@@ -494,7 +507,7 @@ function initScale(curent){
 
     var cwX = h / nwst;
 
-    console.log('cwx = ' + cwX + ' canvasHeight = ' + canvasHeight + ' NWST = ' + Math.trunc(nwst));
+    // console.log('cwx = ' + cwX + ' canvasHeight = ' + canvasHeight + ' NWST = ' + Math.trunc(nwst));
 
     while (v < curX){
         _i = _i - stepYv;
@@ -520,7 +533,7 @@ function initScale(curent){
                     simbX = '';
                 }
             }
-            
+
             context.fillText(simbX, 10, h - 10);
         }else{
             if(v % x_stage){
@@ -536,7 +549,7 @@ function initScale(curent){
         h = h - cwX;
     }
 
-    
+
 
     si = si + 0.025;
 
@@ -573,12 +586,12 @@ function initScale(curent){
         // context.moveTo(i, height + y0);
         // context.lineTo(i, height + y0 + 15);
         if(mm % newStep){
-           simb = ''; 
+           simb = '';
         }else{
             simb = mm + 's';
             if(mm != 0){
                 context.moveTo(i + 3, canvasHeight - border);
-                context.lineTo(i + 3, border); 
+                context.lineTo(i + 3, border);
             }
 
             context.lineWidth = 0.1;
@@ -589,7 +602,7 @@ function initScale(curent){
 
     context.strokeStyle = '#aaa';
     context.stroke();
-    
+
     iniLineGr();
 }
 
@@ -597,9 +610,9 @@ function iniLineGr(){
     context.closePath();
     context.beginPath();
 
-    
+
     context.moveTo(border + 20 + 0.5, canvasHeight - border);
-    context.lineTo(border + 20 + 0.5, border); 
+    context.lineTo(border + 20 + 0.5, border);
     context.moveTo(border + 20 + 0.5, canvasHeight - border);
     context.lineTo(canvasWidth - border, canvasHeight - border);
 
@@ -610,14 +623,13 @@ function iniLineGr(){
 
 }
 
-
 function clearCanvas(){
     canvasWidth = canvas.width;
     canvasHeight = canvas.height;
     context.clearRect(0, 0, canvasWidth, canvasHeight);
 }
 
-function crushGraph(curentX, timeout){
+function crushGraph(curentX, timeout, stop){
     context.closePath();
     $('#dp_bet').attr('disabled', true);
     canvasWidth = canvas.width - 20;
@@ -641,11 +653,11 @@ function crushGraph(curentX, timeout){
     var isFirst = true;
     var isFirstX = true;
 
-    context.beginPath();               
+    context.beginPath();
     context.lineWidth = 10;
     context.stroke();
 
-    context.strokeStyle = '#E95E3F';     
+    context.strokeStyle = '#E95E3F';
     while (drawX <= curentX) {
         drawY = getCrashGraphicY(drawX);
         drawX += graphStep;
@@ -657,7 +669,7 @@ function crushGraph(curentX, timeout){
         }
     }
 
-    context.stroke();   
+    context.stroke();
     context.font = "50px Tahoma";
     context.textAlign = "center";
     context.fillStyle = "#E95E3F";
@@ -666,7 +678,7 @@ function crushGraph(curentX, timeout){
     context.beginPath();
 
     drawYY = getCrashGraphicY(curentX);
-    context.arc(border + curentX * scaleX + 10, canvasHeight - border - (drawYY - 1) * scaleY + 2, 8, 0, 2*Math.PI, false); 
+    context.arc(border + curentX * scaleX + 10, canvasHeight - border - (drawYY - 1) * scaleY + 2, 8, 0, 2*Math.PI, false);
 
     context.strokeStyle = '#E95E3F';
     context.fill();
@@ -683,9 +695,12 @@ function crushGraph(curentX, timeout){
         }else{
             $(element).addClass('win');
         }
-        
-    });
 
+    });
+    //
+    // if(stop == 1) {
+    //     startCrashTimer(curentX, 10);
+    // }
     setTimeout(function(){
         console.log('destroy');
 
@@ -700,7 +715,7 @@ function getCrashGraphicY(x) {
 paintCrashGraphic(startX);
 
 function newCrash (i_int, curent, n, stop_game, stop){
-    
+
     interval = setInterval(function(){
 
         if(i_int >= n){
@@ -712,16 +727,16 @@ function newCrash (i_int, curent, n, stop_game, stop){
             if(x > 10){
                 var res = parseInt(x) - 10;
                 var timer = res * 1000;
-                console.log(timer + ' - timer');
+                console.log(i_int + ' - timer - ' + timer);
                 crushGraph(i_int, timer);
             }else if(x <= 10){
                 startCrashTimer(i_int, x);
             }
 
-        }else{
-
+        }
+        else{
             initGraph(i_int);
-            i_int = i_int + 0.025; 
+            i_int = i_int + 0.025;
         }
 
     }, 25);
@@ -799,7 +814,7 @@ $('#bet_form').on('submit', function(e){
 
 $('.cashout ul li').click(function(){
 
-    var ac = $(this).data('action'); 
+    var ac = $(this).data('action');
     var input = $('#cashout');
 
     if(ac == '1'){
@@ -861,7 +876,7 @@ $('.bet ul li').click(function(){
             }else if(vF == '%'){
                var pr = ac.slice(1);
                var tn = 10 * parseFloat(pr / 100);
-               input.val(Math.floor(tn)); 
+               input.val(Math.floor(tn));
             }
         }
     }else{
@@ -881,7 +896,7 @@ $('.bet ul li').click(function(){
             }else if(vF == '%'){
                var pr = ac.slice(1);
                var tn = parseInt(input.val()) * parseFloat(pr / 100);
-               input.val(Math.floor(tn)); 
+               input.val(Math.floor(tn));
             }
         }
     }
@@ -909,3 +924,17 @@ function resize(){
     console.log($('#crash_block').width() + 'px - resize');
 }
 
+
+
+// $(document).on('crash-coeff', function(e, coeff) {
+//     console.log(coeff);
+//     $('body').data('coeff', coeff).attr('data-coeff', coeff);
+//     // crushGraph(coeff,1);
+//     // $.ajax({
+//     //     type: 'GET',
+//     //     url: "/crash/set-current-profit?profit=" + coeff,
+//     //     success: function(result){
+//     //         // console.log('Профит установлен: ', profit);
+//     //     }
+//     // });
+// });

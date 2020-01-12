@@ -265,7 +265,7 @@
 <div class="form-payment" style="display:none;">
     <input type="hidden" name="time" value="{{ auth()->user() ? auth()->user()->id : '' }}">
 </div>
-<a href="//www.free-kassa.ru/" style="display: none"><img src="//www.free-kassa.ru/img/fk_btn/14.png"></a>
-<a href="https://www.fkwallet.ru" style="display: none"><img src="https://www.fkwallet.ru/assets/2017/images/btns/iconsmall_wallet8.png" title="Прием криптовалют"></a>
+<a href="//www.free-kassa.ru/" style="display: none"><img src="/img/icons/free-kassa.png"></a>
+<a href="https://www.fkwallet.ru" style="display: none"><img src="/img/icons/iconsmall_wallet8.png" title="Прием криптовалют"></a>
 </body>
 </html>

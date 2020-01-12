@@ -23,7 +23,7 @@
             $bl = '';
         }
     ?>
-    <main class="main crash-main">
+    <main id="app" class="main crash-main">
         <div class="main__left">
 
             <div class="controls-panel-crash">
@@ -134,7 +134,7 @@
                                 {{$g->profit}}
                                 <span class="tooltiptext">
                                     ROUND: {{$g->id}}<br>
-                                    HASH: {{md5($g->id)}}{{md5($g->profit)}}
+                                    HASH: {{ hash("sha224", $g->profit, FALSE) }}
                                 </span>
                             </a>
                         </li>
@@ -207,11 +207,14 @@
 
     <script src="{{ asset('js/main.js') }}"></script>
     <script type="text/javascript">
-        initGraph(<?= time() - $game->create_game; ?>);
+        @if($game->create_game >= 0)
+            initGraph(<?= time() - $game->create_game; ?>);
+        @endif
 
         var i_int = parseInt(<?= time() - $game->create_game; ?>) + 1;
         var curent = <?= time(); ?>;
         var n = <?= $game->number ?>;
+        console.log('game_number: ', n);
 
         if(i_int == 1){
             var stop = <?= $game->stop_game - $game->number; ?>;
@@ -221,7 +224,7 @@
 
         function intervalGr()
         {
-
+            // console.log('i_int', i_int, ' n ', n, ' stop', stop);
             if(i_int >= n){
                 clearInterval(intervalID);
                 var x = parseInt(stop) - parseInt(curent);
@@ -244,13 +247,37 @@
                     startCrashTimer(i_int, tm);
                 }
 
-            }else{
+            }
+            else{
 
                 initGraph(i_int);
                 i_int = i_int + 0.025; 
             }                   
         }
         var intervalID = setInterval(intervalGr, 25);
+
+
+        function gameInfoInterval(){
+            var rand_number = $('body').data('coeff');
+            if(rand_number > 0) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/crash/get-info?rand_number=' + rand_number,
+                    success: function(result){
+                        console.log('Game info: ', result);
+                        // console.log('profit - ' + result.profit);
+                        // console.log('rand_number - ' + result.rand_number);
+                        if(rand_number > result.profit) {
+                            $('body').data('coeff', 0).attr('data-coeff', 0);
+                            // console.log('rand_number reload');
+                            // crushGraph(i_int, null, 1);
+                            // location.reload();
+                        }
+                    }
+                });
+            }
+        }
+        var int = setInterval(gameInfoInterval, 1000);
 
     </script>
 
@@ -294,7 +321,7 @@
                                     </th>
                                     <td class="text-color-{{$color}}" scope="row">{{$g->profit}}x</td>
                                     <td scope="row">{{date('d/m/Y H:i', $g->create_game)}}</td>
-                                    <td scope="row">{{md5($g->id)}}{{md5($g->profit)}}</td>
+                                    <td scope="row">{{ hash("sha224", $g->profit, FALSE) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -311,17 +338,17 @@
         ?>
         <div class="modal modal--help info-game-crash" id="historyGame_{{$_game->id}}">
             <div class="modal__top">
-                <h6 class="modal__title">АВАРИЯ: {{$_game->id}}</h6>
+                <h6 class="modal__title">CRASH: {{$_game->id}}</h6>
                 <a class="modal__close" data-izimodal-close><i class="ic-close"></i></a>
             </div>
             <div class="modal__body">
                 <div class="modal-help nano">
                     <div class="nano-content rules-of-the-game modal-table mb prm">
                         <div class="info-bl-game">
-                            <div class="list-info">Хэш: {{md5($g->id)}}{{md5($g->profit)}}</div>
+                            <div class="list-info">Хэш: {{ hash("sha224", $_game->profit, FALSE) }} <a href="http://sha224.net/?val={{ $_game->profit }}" target="_blank">Проверить</a></div>
                             <div class="list-info">Номер игры: {{$_game->id}}</div>
-                            <div class="list-info">Дата: {{date('d/m/Y H:i', $g->create_game)}}</div>
-                            <div class="list-info">Коэффициент: {{$g->profit}}x</div>
+                            <div class="list-info">Дата: {{date('d/m/Y H:i', $_game->create_game)}}</div>
+                            <div class="list-info">Коэффициент: {{$_game->profit}}x</div>
                         </div>
                     </div>
                     <div class="nano-content rules-of-the-game modal-table prm">                

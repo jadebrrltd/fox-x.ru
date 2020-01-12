@@ -31,6 +31,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function getMessages() {
 
         $messages = Message::with('account')->orderBy('created_at', 'desc')->take(40)->get();
+//        $messages = null;
         return $messages;
     }
 }

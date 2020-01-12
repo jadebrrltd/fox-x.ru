@@ -372,7 +372,11 @@ class MainController extends Controller
     public function crash_stop(Request $request){
         $game = CrashGame::orderBy('id', 'desc')->first();
         $stop = time() + 17;
-        DB::table('crashgames')->where('id', $game->id)->update(['stop_game' => $stop, 'profit' => $request->get('r')]);
+        DB::table('crashgames')->where('id', $game->id)->update([
+            'stop_game' => $stop,
+            'status' => 0,
+            'profit' => $request->get('r')
+        ]);
 
         StopCrash::dispatch('true');
     }

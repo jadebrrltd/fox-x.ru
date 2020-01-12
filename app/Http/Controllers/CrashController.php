@@ -11,10 +11,12 @@ use App\Http\Requests;
 use Illuminate\Support\Cache;
 use App\Events\JoinCrash;
 use App\Events\AdmCrash;
+use App\Events\CrashCoef;
 
 use Auth;
 use App\Payment;
 
+use Illuminate\Support\Facades\Log;
 use Storage;
 use DB;
 
@@ -72,6 +74,7 @@ class CrashController extends Controller {
 			CrashGame::create([
 				'number' => $i,
 				'create_game' => time() + 10,
+				'rand_number' => '0',
 				'profit' => $y,
 				'stop_game' => time() + $i + 27
 			]);
@@ -86,6 +89,92 @@ class CrashController extends Controller {
     	}else{
     		return "error";
     	}
+    }
+	public function setProfit(Request $request)
+    {
+//        $game_id = $request->game;
+        $profit = $request->profit;
+//    	$game = CrashGame::find($game_id);
+        $game = CrashGame::orderBy('id', 'desc')->first();
+
+        $game->profit = $profit;
+    	$game->save();
+//        Log::warning('profit ' . print_r($profit,1));
+//        Log::warning('req ' . print_r($request,1));
+//
+//        CrashGame::create([
+//            'number' => $i,
+//            'create_game' => time() + 10,
+//            'profit' => $y,
+//            'stop_game' => time() + $i + 27
+//        ]);
+
+
+
+
+    }
+	public function setCurrentProfit(Request $request)
+    {
+        $profit = $request->profit;
+//        Log::warning('profit 1 ' . print_r($profit,1));
+        $game = CrashGame::orderBy('id', 'desc')->first();
+        $game->rand_number = $profit;
+    	$game->save();
+//        Log::warning('profit set ' . print_r($profit,1));
+    }
+	public function getInfo(Request $request)
+    {
+//        $game_id = $request->game;
+//        if($game_id) $game = CrashGame::find($game_id)->select('profit','rand_number')->get();
+//        else $game = CrashGame::orderBy('id', 'desc')->select('profit','rand_number')->first();
+        $rand_number = $request->rand_number;
+        $admin = $request->admin;
+
+        $game = CrashGame::orderBy('id', 'desc')->first();
+
+        if($admin) {
+            $bets = DB::table('crashbets')->where('crash_game_id', $game->id)->orderBy('price', 'desc')->get();
+            if($game->status == 0) {
+                $info = $game;
+                $mode = 0;
+            }
+            else {
+                $info = $game;
+                $mode = 1;
+
+                $x = time() - $game->create_game;
+                $profit = $x;
+            }
+            return view('admin.crash_result', compact( 'info', 'bets', 'mode'));
+        }
+
+        if ($rand_number) {
+            $game->rand_number = $rand_number;
+            $game->save();
+        }
+        $result = $game->toArray();
+//        Log::warning('result: ' . print_r($result, 1));
+        return response()->json($result);
+//        Log::warning('profit ' . print_r($profit,1));
+//        Log::warning('req ' . print_r($request,1));
+//
+//        CrashGame::create([
+//            'number' => $i,
+//            'create_game' => time() + 10,
+//            'profit' => $y,
+//            'stop_game' => time() + $i + 27
+//        ]);
+
+
+
+
+    }
+
+    public function crashCoef(Request $request) {
+	    $coef = $request->get('coef');
+	    event(
+	        new CrashCoef($coef)
+        );
     }
 
 	public function setGameStatus(Request $request)

@@ -1,6 +1,41 @@
 <div class="left">
     @if($mode == 0)
-        <div class="total"><spnan id="total_x">0.00</spnan>X</div>
+        @if($info->id)
+            <div class="info">
+                Игра №<b>{{$info->id}}</b>
+            </div>
+        @endif
+        <div class="total">
+            @if(isset($info->rand_number) and $info->rand_number > 0)
+                @php
+                    if($info->rand_number < 10) $co = 0.2;
+                    elseif($info->rand_number >= 10) $co = 1;
+                    elseif($info->rand_number >= 20) $co = 2;
+                    elseif($info->rand_number >= 50) $co = 4;
+                    elseif($info->rand_number >= 60) $co = 8;
+                    elseif($info->rand_number >= 90) $co = 10;
+                    elseif($info->rand_number >= 150) $co = 20;
+                    elseif($info->rand_number >= 250) $co = 30;
+                    $rand_number = $info->rand_number + $co;
+                @endphp
+                ~<snan id="total_x" title="Текущий коэфициент">{{number_format((float)$rand_number, 2, '.', '')
+                        }}</snan>X
+            @else
+                <snan id="total_x" title="Текущий коэфициент">0.00</snan>X
+            @endif
+            <small id="total_x" style="color:
+                    @if($info->profit)
+                        #1f92bf
+                    @else
+                        red
+                    @endif
+                " title="Профит
+            игры">{{number_format(
+            (float)$info->profit, 2,
+            '.',
+                     '')
+                    }}X</small>
+        </div>
         <div class="info">Онлайн в Crash: 0</div>
         <script>
             var co = 0;
@@ -12,10 +47,15 @@
                 <div class="game-id">Номер игры: {{$info->id}}</div>
                 <div class="total">
                     @if($info->rand_number)
-                        ~<snan id="total_x" title="Текущий коэфициент">{{number_format((float)$rand_number, 2, '.', '')
+                        @php
+                        $rand_number = $info->rand_number + 2;
+                        @endphp
+                        ~<snan id="total_x" title="Текущий коэфициент">{{number_format((float)$rand_number, 2,
+                         '.', '')
                         }}</snan>X
                     @endif
-                    <small id="total_x" style="color: #1f92bf;" title="Профит">{{number_format((float)$profit, 2, '.',
+                    <small id="total_x" style="color: #1f92bf;" title="Профит">{{number_format((float)$info->profit, 2,
+                    '.',
                      '')
                     }}X</small>
                 </div>
@@ -113,13 +153,13 @@
 </div>
 
 <div class="right">
-    @if(isset($bets))
+@if(isset($bets))
         @if(count($bets))
             <div class="table-bets">
-                <table class="table table-hover">
+                <table class="table table-hover" style="width: 100%;">
                     <thead>
                     <tr>
-                        <th scope="col">ID пользователя</th>
+                        <th scope="col">Пользователь</th>
                         <th scope="col">Коэффициент</th>
                         <th scope="col">Ставка</th>
                         <th scope="col">Возможный выигрыш</th>
@@ -133,9 +173,11 @@
                         }else{
                             $z = '-';
                         }
+                        $user =  \App\User::find($bet->user_id);
                         ?>
+
                         <tr>
-                            <th scope="row">{{$bet->user_id}}</th>
+                            <td scope="row">{{$user->name}} ({{$bet->user_id}})</td>
                             <td>{{$bet->number}}X</td>
                             <td>{{$bet->price}}</td>
                             <td>{{$z}}{{$bet->number * $bet->price - $bet->price}}</td>

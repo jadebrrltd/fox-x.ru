@@ -1,15 +1,19 @@
 $(document).ready( function() {
-
-	var socketCG = io.connect(':6001', {
-        secure: true,
-        'force new connection': true
-    });
+    console.log('crash ready');
+	// var socketCG = io.connect(':6002', {
+    //     secure: true,
+    //     'force new connection': true
+    // });
+    var socketCG = io.connect(':6001');
 	var usersList = $('.betshist');
 	//usersList.mCustomScrollbar();
+    // socketCG.broadcast.emit('crash-coef', 'test coef');
+    // console.log('coef');
+    // $(document).on('crash-coef', function(e, coeff) {
+    //     console.log('coef: ', coeff);
+    //     socketCG.broadcast.emit('crash-coef', coeff);
+    // });
 
-
-		
-		
 		socketCG.on('timeLeft', function(data) {
 			$('.cg_graph_block .time_left').removeClass('disable');
 			$('.cg_graph_block .time_left span').html(data);

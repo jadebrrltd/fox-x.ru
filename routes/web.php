@@ -36,7 +36,10 @@ Route::post('auth-user', [
 //Маршруты игры Crash
 Route::get('/crash', ['as' => 'crash', 'uses' => 'CrashController@index']);
 Route::get('/crash/new', ['as' => 'crash-new', 'uses' => 'CrashController@newGame']);
+Route::get('/crash/set-profit', ['as' => 'set-profit', 'uses' => 'CrashController@setProfit']);
 Route::get('/crash/info', ['as' => 'crash-info', 'uses' => 'CrashController@info']);
+Route::get('/crash/get-info', ['as' => 'get-info', 'uses' => 'CrashController@getInfo']);
+Route::get('/crash/set-current-profit', ['as' => 'set-current-profit', 'uses' => 'CrashController@setCurrentProfit']);
 Route::get('/crash/last-game', ['as' => 'crash-last', 'uses' => 'CrashController@getLastGame']);
 
 Route::post('/crash/new-bet', function(Illuminate\Http\Request $request){
