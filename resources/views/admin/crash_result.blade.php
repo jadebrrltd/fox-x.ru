@@ -36,7 +36,7 @@
                      '')
                     }}X</small>
         </div>
-        <div class="info">Онлайн в Crash: 0</div>
+        <div class="info">Онлайн в Crash: {{count($bets)}}</div>
         <script>
             var co = 0;
             var intS  = 0;
